@@ -12,13 +12,22 @@
 </head>
 <body>
     <model-viewer 
-        src="https://github.com/Predatorxx69/ARMenu/raw/refs/heads/main/Duck.glb" 
-        alt="A 3D model of a duck" 
-        ar 
-        ar-modes="scene-viewer quick-look webxr" 
-        camera-controls 
-        auto-rotate 
-        poster="https://modelviewer.dev/shared-assets/models/NeilArmstrong.webp">
+    src="https://github.com/Predatorxx69/ARMenu/raw/refs/heads/main/Duck.glb"
+    ar 
+    ar-modes="scene-viewer webxr quick-look"
+    camera-controls
+    autoplay
+    auto-rotate
+    alt="Duck Model">
     </model-viewer>
+
+    <script>
+        window.addEventListener('load', () => {
+            const modelViewer = document.querySelector('model-viewer');
+            if (modelViewer.canActivateAR) {
+                modelViewer.activateAR();
+            }
+        });
+    </script>
 </body>
 </html>
