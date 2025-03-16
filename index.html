@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View in AR</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+        body { display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f0f0f0; }
+        model-viewer { width: 100%; height: 100%; max-width: 600px; }
+    </style>
+</head>
+<body>
+    <model-viewer 
+        src="https://github.com/Predatorxx69/ARMenu/raw/refs/heads/main/Duck.glb" 
+        alt="A 3D model of a duck" 
+        ar 
+        ar-modes="scene-viewer quick-look webxr" 
+        camera-controls 
+        auto-rotate 
+        poster="https://modelviewer.dev/shared-assets/models/NeilArmstrong.webp">
+    </model-viewer>
+</body>
+</html>
