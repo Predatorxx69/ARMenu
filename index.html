@@ -28,6 +28,15 @@
                 modelViewer.activateAR();
             }
         });
+        const urlParams = new URLSearchParams(window.location.search);
+        const itemName = urlParams.get('item');
+
+        if (itemName) {
+          const modelPath = `models/${itemName.replace(/ /g, '_')}.glb`;  
+          loadARModel(modelPath); // Assuming you have a function for this
+        } else {
+          console.error("No item name provided!");
+        }
     </script>
 </body>
 </html>
