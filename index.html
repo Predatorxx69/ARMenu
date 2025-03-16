@@ -23,20 +23,26 @@
 
     <script>
         window.addEventListener('load', () => {
-            const modelViewer = document.querySelector('model-viewer');
-            if (modelViewer.canActivateAR) {
-                modelViewer.activateAR();
-            }
-        });
-        const urlParams = new URLSearchParams(window.location.search);
-        const itemName = urlParams.get('item');
+    const modelViewer = document.querySelector('model-viewer');
 
-        if (itemName) {
-          const modelPath = `models/${itemName.replace(/ /g, '_')}.glb`;  
-          loadARModel(modelPath); // Assuming you have a function for this
-        } else {
-          console.error("No item name provided!");
-        }
+    // Get item name from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const itemName = urlParams.get('item');
+
+    if (itemName) {
+        // Set new model path based on item name
+        const modelPath = `https://github.com/Predatorxx69/ARMenu/raw/refs/heads/main/${itemName.replace(/ /g, '_')}.glb`;
+        modelViewer.src = modelPath; // Dynamically update the model source
+    } else {
+        console.error("No item name provided!");
+    }
+
+    // Auto-trigger AR if supported
+    if (modelViewer.canActivateAR) {
+        modelViewer.activateAR();
+    }
+});
+
     </script>
 </body>
 </html>
